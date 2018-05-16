@@ -1,0 +1,86 @@
+{% load staticfiles %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>pyswift-perview</title>
+<link href="{% static 'css/main-interface.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="layouApp">
+	<div class="header">
+		<div class="left">
+			<img src="{% static 'img/cloud.jpg' %}">
+		</div>
+		<div class="midder">
+			<a href="#"> 网盘</a>&nbsp;&nbsp;
+			<a href="#">分享</a>&nbsp;&nbsp;
+			<a href="#"> 更多</a>&nbsp;&nbsp;&nbsp;
+		</div>
+		<div class="right">
+			            		<a href="{% url 'register' %}">注册</a>&nbsp;|
+		<a href="{% url 'login' %}">登录</a>&nbsp;|
+        <a href="{% url 'index' %}">返回首页</a>
+		</div>
+
+
+	</div>
+	<div class="box-left">
+		<div class="top">
+			<li><a  class="top-font" href="#">网盘</a></li>
+			<div class="no"></div>
+			<li><a  class="top-font" href="#">视频</a></li>
+			<div class="no"></div>
+			<li><a  class="top-font" href="#">图片</a></li>
+			<div class="no"></div>
+			<li><a  class="top-font" href="#">种子</a></li>
+			<div class="no"></div>
+			<li><a  class="top-font" href="#">其他</a></li>
+			<div class="no"></div>
+			<li><a  class="top-font" href="#">回收站</a></li>
+		</div>
+	</div>
+	<div class="box-right">
+	<div class="top">
+	<div class="shang">
+		<form  enctype="multipart/form-data" action="{% url 'perview' container_name None %}" method="post">
+     <span>{{fileform.onefile}}</span>
+    <input type="submit" value="Upload" id="log" class="qrsc" name = "upload"/>
+</form>
+    {% if reminder %}
+        <script> alert('下载成功。');parent.location.href="{% url 'perview' container_name None %}"; </script>
+        {% endif %}
+	</div>
+
+	<table>
+	<tr>
+		<td>文件名</td>
+		<td>Bytes大小</td>
+	<td id="opertion">操作</td>
+
+	</tr>
+        {% for file in containers_file %}
+	<tr>
+		<td><a href="/content/{{container_name}}/{{file.name}}">{{file.name}}</a></td>
+		<td>{{file.bytes}}</td>
+		<td>
+
+		<form  enctype="multipart/form-data" action="{% url 'perview' container_name file.name %}"  method="post">
+    <input type="submit" value="Download"  class="qrsc1" name = "download"/>
+</form>
+<div class="sno">&nbsp;</div>
+		<form  enctype="multipart/form-data" action="{% url 'perview' container_name file.name %}" method="post">
+    <input type="submit" value="Delete"  class="qrsc2" name = "delete"/>
+</form>
+
+		</td>
+	</tr>
+        {% endfor %}
+
+</table>
+	</div>
+	</div>
+</div>
+
+</body>
+</html>

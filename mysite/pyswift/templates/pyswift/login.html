@@ -1,0 +1,51 @@
+{% load staticfiles %}
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>pyswift-login</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}" />
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/component.css' %}" />
+<!--[if IE]>
+<script src="{% static 'js/html5.js' %}"></script>
+<![endif]-->
+</head>
+<body>
+    {% if errors %}
+        {% for error in errors %}
+    <script> alert('{{error}}');parent.location.href="{% url 'login' %}"; </script>
+        {% endfor %}
+    {% endif %}
+		<div class="container demo-1">
+			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<div class="logo_box">
+						<h1>欢迎登陆</h1>
+						<form action="{% url 'login' %}" name="f" method="post" enctype="multipart/form-data">
+							<div class="input_outer">
+								<span class="u_user"></span>
+								<input name="username" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
+							</div>
+							<div class="input_outer">
+								<span class="us_uer"></span>
+								<input name="password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
+							</div>
+							<div class="mb2">
+								<input class="act-but submit" type="submit" name="submit" value="点击登陆" style="color: #FFFFFF"/>
+								<input class="act-but submit" type="button"  value="去注册" style="color: #FFFFFF" onClick="location.href='{% url 'register' %}';"/>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+		<script src="{% static 'js/TweenLite.min.js' %}"></script>
+		<script src="{% static 'js/EasePack.min.js' %}"></script>
+		<script src="{% static 'js/rAF.js' %}"></script>
+		<script src="{% static 'js/demo-1.js' %}"></script>
+	</body>
+</html>

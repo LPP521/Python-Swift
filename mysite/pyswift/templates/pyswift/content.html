@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>pyswift-content</title>
+<link href="{% static 'css/main-interface.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="layouApp">
+	<div class="header">
+		<div class="left">
+			<img src="{% static 'img/cloud.jpg' %}">
+		</div>
+		<div class="midder">
+			<a href="#"> 网盘</a>&nbsp;&nbsp;
+			<a href="#">分享</a>&nbsp;&nbsp;
+			<a href="#"> 更多</a>&nbsp;&nbsp;&nbsp;
+		</div>
+		<div class="right">
+            		<a href="{% url 'register' %}">注册</a>&nbsp;|
+		<a href="{% url 'login' %}">登录</a>&nbsp;|
+        <a href="{% url 'perview' container_name file_name%}">返回上一级</a>&nbsp;|
+        <a href="{% url 'index' %}">返回首页</a>
+		</div>
+
+
+	</div>
+	<div class="box-left">
+		<div class="top">
+			<li><a  class="top-font" href="#">网盘</a></li>
+			<div class="no"></div>
+			<li><a  class="top-font" href="#">视频</a></li>
+			<div class="no"></div>
+			<li><a  class="top-font" href="#">图片</a></li>
+			<div class="no"></div>
+			<li><a  class="top-font" href="#">种子</a></li>
+			<div class="no"></div>
+			<li><a  class="top-font" href="#">其他</a></li>
+			<div class="no"></div>
+			<li><a  class="top-font" href="#">回收站</a></li>
+		</div>
+	</div>
+	<div class="box-right">
+	 <div class="b">
+	 	<div class="b1">
+	 	<span>文  件  内  容:</span><br/><br/>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;{{file_content}}</span>
+	 	</div>
+	 </div>
+	</div>
+</div>
+
+</body>
+</html>

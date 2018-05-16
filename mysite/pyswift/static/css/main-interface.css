@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+a{color: black; text-decoration: none;} li{list-style: none}
+.layouApp{overflow: hidden;position: absolute;top: 0;right: 0;bottom: 0;left: 0;min-width: 1103px;}
+.header{ width: 100%;height: 62px;min-width: 1050px;font-size: 12px;margin-top: 0px;position: absolute;z-index: 999;left: 0; background:#ECF5FF}
+.box-left{top: 62px;left: 0px;bottom: 0px;z-index: 9;position: absolute;width: 194px;height: 100%;background:#EEF2F7}
+.box-right{top:62px;left:194px;bottom: 0px;right: 10px;z-index: 0;position: absolute; background:url(../img/cloud2.png) no-repeat; background-size: 100% 100%; }
+.header .left{width: 100px; float: left;margin-left: 10px;}
+img{width: 100%;height: 100%}
+.header .right{ width: 400px; float: right;margin-right: 30px;margin-top: 20px; height: 30px;font-size: 20px;}
+.header .midder{ width: 280px; float: left; margin-left: 300px; margin-top: 20px; height: 30px;font-size: 20px;}
+.box-left .top{margin-top: 100px; height: 300px; margin-left: 40px;}
+.top .no{ height: 20px;}
+.top .top-font{font-size: 20px; height: 50px;margin-left: 0px;padding-top: 100px;font-family:"fangsong"}
+.qrsc{width:80px;height:100%;border:2px solid red;background:red;color:#fff;cursor:pointer;font-size:15px;font-weight:bold;}
+.box-right .top{ width:80%;height:80%; margin: 0 auto; margin-top: 100px;}
+table{width: 100%;}td{height: 50px;}
+td{background:#EEF2F7}
+.shang{width: 500px;height: 60px;margin: 0 auto}
+.sno{width: 0px;float: left;}
+.qrsc1{height:100%;border:2px ;cursor:pointer;font-size:15px;font-weight:bold;float: left;margin-left: 50px;}
+.qrsc2{height:100%;border:2px;cursor:pointer;font-size:15px;font-weight:bold;float: right;}
+.sno{width: 50px;float: right;}
+.box-right .b{width: 100%;height: 100%;margin-top: 50px;}
+.b .b1{font-size:25px;}
+span{margin-left:50px;}
+#opertion{text-align:center;}
+.box-right .top a:hover{color:red;}
+.right a:hover{color:red;}
+
+
+
