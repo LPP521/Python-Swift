@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ssh://swift@127.0.0.1:2222/usr/bin/python" name="ssh://swift@127.0.0.1:2222/usr/bin/python">
+        <fileTransfer host="127.0.0.1" port="2222" accessType="SFTP">
+          <option name="port" value="2222" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
